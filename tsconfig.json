@@ -3,7 +3,7 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "./dist/",
+    "outDir": "./assets/",
     "noImplicitAny": true,
     "sourceMap": true,
     "module": "es6",
@@ -12,7 +12,12 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@routes/*": ["src/routes/*"]
+    },
+    "typeRoots": ["./extend-types.ts"]
   },
   "exclude": ["node_modules"]
 }
