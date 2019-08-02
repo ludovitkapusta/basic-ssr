@@ -1,6 +1,6 @@
-# basic SSR
+# `React, Typesctript, styled-components` and `webpack` server side rendering app implementation for usage with `ReactJS.NET`
 
-Example of server side rendered react app
+Example of server side rendered react app with exposed react components to consume through `ReactJS.net` (`C#` and other `.NET` languages library, focusing specially on `ASP.NET MVC`)
 
 ## Installation
 
@@ -9,20 +9,12 @@ Example of server side rendered react app
 
 ## Run
 
-For development enviroment run:
+For development enviroment run `yarn ssr-client`. After succesfull build, run `yarn ssr-server` to serve new server build. FE and server are rebuilded after every change.
 
-```javascript
-yarn dev
-```
+After compoilation, open `localhost:8080`
 
-After finish of build run
+## Production
 
-```javascript
-yarn server
-```
+Client side of production is build by `yarn build`. After that, as JS can also server as server side rendered version, your server may need to run `yarn build:net` to prepare version of JS to be consumed by server. All react components should be exposed in `server/SSR.tsx` by adding them to `global` variable in example.
 
-Open
-
-```
-localhost:8080
-```
+It is highly recomended to expose every react component separatelly.

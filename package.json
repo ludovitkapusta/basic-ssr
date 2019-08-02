@@ -1,7 +1,7 @@
 {
   "name": "basic-ssr",
   "version": "1.0.0",
-  "description": "",
+  "description": "React, Typesctript, styled-components and webpack server side rendering app implementation for usage with ReactJS.NET",
   "scripts": {
     "build": "yarn lint && webpack --config webpack.prod.js",
     "build:net": "webpack --config webpack.prod.net.js",
