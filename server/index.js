@@ -8,7 +8,8 @@ import StaticRouterProvider from './staticRouterProvider'
 import global from './SSR'
 import template from './template'
 import { appData } from './appData'
-import GlobalStyle from '../src/GlobalStyle'
+import { GlobalStyle } from '@theme/global-style'
+import { ThemeProvider, theme } from '@theme/styled-components'
 
 const PORT = 8080
 const app = express()
@@ -24,11 +25,13 @@ app.get('*', (request, response) => {
       <StyleSheetManager sheet={sheet.instance}>
         <>
           <GlobalStyle />
-          <>
-            <div id="headerContainer">{global.Header(appData.header)}</div>
-            <StaticRouterProvider location={request.url} />
-            <div id="footerContainer">{global.Footer(appData.footer)}</div>
-          </>
+          <ThemeProvider theme={theme}>
+            <>
+              <div id="headerContainer">{global.Header(appData.header)}</div>
+              <StaticRouterProvider location={request.url} />
+              <div id="footerContainer">{global.Footer(appData.footer)}</div>
+            </>
+          </ThemeProvider>
         </>
       </StyleSheetManager>
     )

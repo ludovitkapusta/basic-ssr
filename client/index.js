@@ -1,7 +1,10 @@
 // @ts-check
 import React from 'react'
 import ReactDOM from 'react-dom'
-import GlobalStyle from '../src/GlobalStyle'
+
+import { GlobalStyle } from '@theme/global-style'
+import { theme, ThemeProvider } from '@theme/styled-components'
+
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import Homepage from '@routes/Homepage'
@@ -14,10 +17,12 @@ export const initialData = window.JS_CONFIG
  * @param {Object} data
  */
 const render = (Element, data) => (
-  <>
-    <GlobalStyle />
-    <Element data={data} />
-  </>
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyle />
+      <Element data={data} />
+    </>
+  </ThemeProvider>
 )
 
 /** Mount React component to container ID

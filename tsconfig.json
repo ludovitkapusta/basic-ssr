@@ -15,7 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@theme/*": ["src/theme/*"]
     },
     "typeRoots": ["./extend-types.ts"]
   },

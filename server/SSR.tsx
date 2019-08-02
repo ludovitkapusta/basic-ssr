@@ -23,7 +23,7 @@ declare let global: any
 global.React = React
 global.ReactDOM = ReactDOM
 global.ReactDOMServer = ReactDOMServer
-global.Styled = ServerStyleSheet
+global.Styled = { ServerStyleSheet }
 
 global.Header = (initialProps: any) => render(Header, initialProps)
 global.Footer = (initialProps: any) => render(Footer, initialProps)

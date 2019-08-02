@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   body {
     letter-spacing: -0.4px;
     line-height: 18px;
@@ -9,5 +9,3 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 `
-
-export default GlobalStyle
