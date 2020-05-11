@@ -1,3 +1,7 @@
+// @ts-nocheck
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -17,11 +21,5 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       __isBrowser__: 'false'
     })
-  ],
-  optimization: {
-    usedExports: true,
-    mangleWasmImports: true,
-    providedExports: true,
-    concatenateModules: true
-  }
+  ]
 })

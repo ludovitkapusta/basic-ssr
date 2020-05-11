@@ -1,31 +1,25 @@
+// @ts-nocheck
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
 
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
-  entry: './client/index.js',
+  entry: './client/index.tsx',
   output: {
     path: path.resolve(__dirname, 'assets/local'),
-    filename: 'bundle.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
-      }
-    ]
+    filename: 'bundle.js',
+    chunkFilename: '[name].chunk.js',
   },
   node: { fs: 'empty' },
   plugins: [
-    new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
-      __isBrowser__: 'true'
+      __isBrowser__: 'true',
     }),
-    new Dotenv()
-  ]
+    new Dotenv(),
+  ],
 })

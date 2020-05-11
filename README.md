@@ -1,4 +1,4 @@
-# `React, Typesctript, styled-components` and `webpack` server side rendering app implementation for usage with `ReactJS.NET`
+### `React, Typescript, styled-components` and `webpack` server side rendering app implementation for usage with `ReactJS.NET`
 
 Example of server side rendered react app with exposed react components to consume through `ReactJS.net` (`C#` and other `.NET` languages library, focusing specially on `ASP.NET MVC`)
 
@@ -7,11 +7,33 @@ Example of server side rendered react app with exposed react components to consu
 - Clone or fork this repository
 - run `yarn` in command line
 
-## Run
+## `webpack-dev-server` version with live reload
 
-For development enviroment run `yarn ssr-client`. After succesfull build, run `yarn ssr-server` to serve new server build. FE and server are rebuilded after every change.
+In the project directory run
 
-After compoilation, open `localhost:8080`
+```javascript
+yarn dev
+```
+
+Server automatically opens new window in your browse on `localhost:8080`
+
+## `SSR` version
+
+In the project directory run
+
+```javascript
+yarn ssr:client
+```
+
+After finished build run
+
+```javascript
+yarn ssr:server
+```
+
+This will serve new server build. FE and server are rebuilded after every change. But manual browser refresh is needed.
+
+After server compilation, app is served on `localhost:8080`
 
 ## Production
 

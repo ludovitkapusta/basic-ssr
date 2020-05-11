@@ -1,18 +1,30 @@
-// @ts-check
-import { appData } from "./appData";
+import appData from './appData'
 
-export default (data: void, markup: string, styleTags: string) => `<!DOCTYPE html>
-<html>
+export default (markup: string, styleTags: string): string => `<!DOCTYPE html>
+<html lang="en">
   <head>
+  <title>Ssr...Ssr...Ssrs</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        letter-spacing: -0.4px;
+        line-height: 18px;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+      }
+    </style>
     <style>${styleTags}</style>
-    <script>window.__SERIALIZED_DATA__ = ${JSON.stringify(data)}</script>
-    <script>JS_CONFIG = {}</script>
-    <script>JS_CONFIG.general = {}</script>
-    <script>JS_CONFIG.footer = ${JSON.stringify(appData.footer.config)}</script>
-    <script>JS_CONFIG.header = ${JSON.stringify(appData.header.config)}</script>
-    <script>JS_CONFIG.homepage = ${JSON.stringify(appData.homepage.config)}</script>
+    <script>JS_CONFIG = ${JSON.stringify(
+      Object.entries(appData).reduce((acc, red) => {
+        const [key, value] = red
+        return {
+          ...acc,
+          [key]: value.config
+        }
+      }, {})
+    )}</script>
   </head>
   <body>
     <div id="app">${markup}</div>

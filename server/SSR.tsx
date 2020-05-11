@@ -1,34 +1,55 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactDOMServer from 'react-dom/server'
+
+import { combineReducers, createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { theme, ThemeProvider } from '@theme/styled-components'
 import { ServerStyleSheet } from 'styled-components'
 
-import Footer from '@components/Footer'
-import Header from '@components/Header'
-import Heading from '@components/Heading'
-
-import Contact from '@routes/Contact'
-import Homepage from '@routes/Homepage'
+import Heading from '@widgets/Heading'
+import {
+  generateSSRreducer,
+  combinedSSRInitialState
+} from '@store/generateReducers'
+import { Footer, Header } from '@components'
+import { AppDataType } from './appData'
+import Contact from '@widgets/Contact'
 
 /* taking care of render component and providing data from React.NET */
-const render = (Element: any, { general = {}, config }: any) => (
-  <>
-    {/* {JSON.stringify(config)} */}
-    <Element data={config} general={general} />
-  </>
-)
+const render = (
+  Element: any,
+  { config, general }: AppDataType
+): JSX.Element => {
+  const rootReducer = combineReducers({
+    ...generateSSRreducer(config),
+    general: (state: any = general): any => state
+  })
 
-declare let global: any
+  const store = createStore(rootReducer, combinedSSRInitialState(config))
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <Element configId={config.componentSettings.name} />
+      </Provider>
+    </ThemeProvider>
+  )
+}
+
+declare const global: any
 
 global.React = React
 global.ReactDOM = ReactDOM
 global.ReactDOMServer = ReactDOMServer
 global.Styled = { ServerStyleSheet }
 
-global.Header = (initialProps: any) => render(Header, initialProps)
-global.Footer = (initialProps: any) => render(Footer, initialProps)
-global.Heading = (initialProps: any) => render(Heading, initialProps)
-global.Homepage = (initialProps: any) => render(Homepage, initialProps)
-global.Contact = (initialProps: any) => render(Contact, initialProps)
+global.Header = (initialProps: AppDataType) => render(Header, initialProps)
+global.Footer = (initialProps: AppDataType) => render(Footer, initialProps)
+global.Heading = (initialProps: AppDataType) => render(Heading, initialProps)
+global.Component2 = (initialProps: AppDataType) => render(Heading, initialProps)
+global.Component3 = (initialProps: AppDataType) => render(Heading, initialProps)
+global.Contact = (initialProps: AppDataType) => render(Contact, initialProps)
 
 export default global

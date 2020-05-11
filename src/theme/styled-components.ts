@@ -1,19 +1,26 @@
 import * as styledComponents from 'styled-components'
-import { ThemedStyledComponentsModule } from 'styled-components'
 
-import { IThemeInterface } from './theme'
-import { base } from './variables/base'
+import { ThemeInterface } from './theme'
+import base from './variables/base'
+import breakpoints from './variables/breakpoints'
+import color from './variables/colors'
+import utils from './variables/utils'
 
 const {
-  default: styled,
-  css,
+  ThemeProvider,
   createGlobalStyle,
+  css,
+  default: styled,
   keyframes,
-  ThemeProvider
-} = styledComponents as ThemedStyledComponentsModule<IThemeInterface>
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<
+  ThemeInterface
+>
 
-export const theme: IThemeInterface = {
-  base
+export const theme: ThemeInterface = {
+  base,
+  breakpoints,
+  color,
+  utils,
 }
 
 export { css, createGlobalStyle, keyframes, ThemeProvider }
