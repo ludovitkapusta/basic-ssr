@@ -37,6 +37,4 @@ After server compilation, app is served on `localhost:8080`
 
 ## Production
 
-Client side of production is build by `yarn build`. After that, as JS can also server as server side rendered version, your server may need to run `yarn build:net` to prepare version of JS to be consumed by server. All react components should be exposed in `server/SSR.tsx` by adding them to `global` variable in example.
-
-It is highly recomended to expose every react component separatelly.
+Client side of production is built by `yarn build`. These are the files, that are handling JS operations on client browser. As this project is aimed to be used by ReactJS.net together with SSR provided by IIS server, addional files are required for server to be consumed. ReactJS.net have their own needs for compatiblity, so there is prepared separated process to build them: `yarn build:net`. All react components should be exposed in `server/SSR.tsx` by adding them to `global` variable in example, so ReactJS.net can see them, read them and render them
