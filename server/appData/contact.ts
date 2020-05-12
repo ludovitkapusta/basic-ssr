@@ -18,8 +18,8 @@ const contact: ContactProps = {
     componentSettings: { name: 'contact' },
     text:
       'This component is render by SSR only. It is not mounted by client script in client/index.js and it is not possible to run here any client JS.',
-    copyright: '© 2019',
-  },
+    copyright: '© 2019'
+  }
 }
 
 export type ContactType = ContactProps

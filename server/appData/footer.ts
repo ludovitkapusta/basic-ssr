@@ -38,7 +38,7 @@ const footer: FooterProps = {
             url: '/',
             target: '_blank',
             isBold: false,
-            children: [],
+            children: []
           },
           {
             id: 8,
@@ -46,7 +46,7 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
+            children: []
           },
           {
             id: 9,
@@ -54,9 +54,9 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 2,
@@ -71,7 +71,7 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
+            children: []
           },
           {
             id: 11,
@@ -79,9 +79,9 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 3,
@@ -96,7 +96,7 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
+            children: []
           },
           {
             id: 13,
@@ -104,9 +104,9 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 4,
@@ -121,7 +121,7 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
+            children: []
           },
           {
             id: 15,
@@ -129,9 +129,9 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 5,
@@ -146,7 +146,7 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
+            children: []
           },
           {
             id: 17,
@@ -154,9 +154,9 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 6,
@@ -171,7 +171,7 @@ const footer: FooterProps = {
             url: 'mailto:',
             target: null,
             isBold: true,
-            children: [],
+            children: []
           },
           {
             id: 19,
@@ -179,12 +179,12 @@ const footer: FooterProps = {
             url: '/',
             target: null,
             isBold: true,
-            children: [],
-          },
-        ],
-      },
-    ],
-  },
+            children: []
+          }
+        ]
+      }
+    ]
+  }
 }
 
 export type FooterType = FooterProps

@@ -12,7 +12,7 @@ export const router = [
         <div data-config-id="footer" data-widget-id="Footer" />
       </>
     ),
-    path: '/',
+    path: '/'
   },
   {
     component: (
@@ -22,6 +22,6 @@ export const router = [
         <div data-config-id="footer" data-widget-id="Footer" />
       </>
     ),
-    path: '/contact',
-  },
+    path: '/contact'
+  }
 ]

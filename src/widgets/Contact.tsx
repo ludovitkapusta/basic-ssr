@@ -10,7 +10,7 @@ interface Props {
 
 const Contact = ({ configId }: Props): JSX.Element => {
   const contact = useSelector(
-    (state: AppState) => state[configId],
+    (state: AppState) => state[configId]
   ) as ContactState
 
   const { copyright, text } = contact

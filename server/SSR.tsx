@@ -15,9 +15,9 @@ import {
 } from '@store/generateReducers'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import { AppDataType } from './appData'
 import Contact from '@widgets/Contact'
 import Carousel from '@widgets/Carousel'
+import { AppDataType } from './appData'
 
 /* taking care of render component and providing data from React.NET */
 const render = (

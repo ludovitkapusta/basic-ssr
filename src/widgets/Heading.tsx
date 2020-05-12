@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react'
 import { useSelector } from 'react-redux'
 
@@ -16,7 +17,14 @@ const Heading = ({ configId }: Props): JSX.Element => {
 
   const { title } = heading
 
-  return <h2 onClick={() => alert(title)}>{title}</h2>
+  return (
+    <h2>
+      {title}{' '}
+      <button onClick={() => alert(title)} type="button">
+        JS CLICK
+      </button>
+    </h2>
+  )
 }
 
 export default Heading

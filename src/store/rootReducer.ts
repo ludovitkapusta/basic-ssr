@@ -25,5 +25,5 @@ export interface AppState {
 }
 
 export default combineReducers({
-  ...generateClientReducers(window.JS_CONFIG),
+  ...generateClientReducers(window.JS_CONFIG)
 })

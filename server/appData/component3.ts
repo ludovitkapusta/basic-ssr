@@ -15,8 +15,8 @@ const component3: Component3Props = {
   general: general.config,
   config: {
     componentSettings: { name: 'component3' },
-    title: 'Heading hydrated 1',
-  },
+    title: 'Heading hydrated 1'
+  }
 }
 
 export type Component3Type = Component3Props

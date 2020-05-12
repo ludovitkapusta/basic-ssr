@@ -13,7 +13,7 @@ const color: Color = {
   gray: '#ddd',
   grayDarker: '#333',
   mainMenuLinkColor: '#000',
-  white: '#fff',
+  white: '#fff'
 }
 
 export default color

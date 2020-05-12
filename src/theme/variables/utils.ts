@@ -3,7 +3,7 @@ export interface Utils {
 }
 
 const utils: Utils = {
-  marginCenter: '0 auto',
+  marginCenter: '0 auto'
 }
 
 export default utils

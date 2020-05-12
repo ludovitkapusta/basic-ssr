@@ -15,7 +15,7 @@ const base: Base = {
 
   baseWidth: 320,
   baseWidthLarge: 1100,
-  baseWidthMedium: 640,
+  baseWidthMedium: 640
 }
 
 export default base

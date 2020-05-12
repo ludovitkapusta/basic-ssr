@@ -9,7 +9,7 @@ import { combinedInitialState } from './generateReducers'
 const store = createStore(
   rootReducer,
   combinedInitialState(window.JS_CONFIG),
-  composeWithDevTools(applyMiddleware(logger)),
+  composeWithDevTools(applyMiddleware(logger))
 )
 
 export default store

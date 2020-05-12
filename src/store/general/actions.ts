@@ -5,6 +5,6 @@ import { GENERAL_INIT, GeneralInit } from './types'
 export const GeneralInitAction = (): GeneralInit => {
   return {
     type: GENERAL_INIT,
-    payload: general.config,
+    payload: general.config
   }
 }

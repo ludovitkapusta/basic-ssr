@@ -33,7 +33,7 @@ const header: HeaderProps = {
         url: '/',
         target: null,
         isActive: true,
-        children: [],
+        children: []
       },
       {
         id: 2,
@@ -55,7 +55,7 @@ const header: HeaderProps = {
                 url: '/',
                 target: null,
                 isActive: false,
-                children: [],
+                children: []
               },
               {
                 id: 18,
@@ -63,9 +63,9 @@ const header: HeaderProps = {
                 url: '/',
                 target: null,
                 isActive: false,
-                children: [],
-              },
-            ],
+                children: []
+              }
+            ]
           },
           {
             id: 8,
@@ -80,7 +80,7 @@ const header: HeaderProps = {
                 url: '/',
                 target: null,
                 isActive: false,
-                children: [],
+                children: []
               },
               {
                 id: 20,
@@ -88,11 +88,11 @@ const header: HeaderProps = {
                 url: '/',
                 target: null,
                 isActive: false,
-                children: [],
-              },
-            ],
-          },
-        ],
+                children: []
+              }
+            ]
+          }
+        ]
       },
       {
         id: 3,
@@ -107,7 +107,7 @@ const header: HeaderProps = {
             url: '/',
             target: '_blank',
             isActive: false,
-            children: [],
+            children: []
           },
           {
             id: 10,
@@ -115,7 +115,7 @@ const header: HeaderProps = {
             url: '/',
             target: null,
             isActive: false,
-            children: [],
+            children: []
           },
           {
             id: 11,
@@ -123,9 +123,9 @@ const header: HeaderProps = {
             url: '/en/faq',
             target: null,
             isActive: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 4,
@@ -147,7 +147,7 @@ const header: HeaderProps = {
                 url: '/',
                 target: null,
                 isActive: false,
-                children: [],
+                children: []
               },
               {
                 id: 22,
@@ -155,9 +155,9 @@ const header: HeaderProps = {
                 url: '/',
                 target: null,
                 isActive: false,
-                children: [],
-              },
-            ],
+                children: []
+              }
+            ]
           },
           {
             id: 13,
@@ -172,11 +172,11 @@ const header: HeaderProps = {
                 url: '/en/learning-platform/applications/real-time-qpcr/',
                 target: null,
                 isActive: false,
-                children: [],
-              },
-            ],
-          },
-        ],
+                children: []
+              }
+            ]
+          }
+        ]
       },
       {
         id: 5,
@@ -198,7 +198,7 @@ const header: HeaderProps = {
                 url: '/en/about-us/who-we-are/credo/',
                 target: null,
                 isActive: false,
-                children: [],
+                children: []
               },
               {
                 id: 57,
@@ -206,9 +206,9 @@ const header: HeaderProps = {
                 url: '/en/about-us/who-we-are/contacts/',
                 target: null,
                 isActive: false,
-                children: [],
-              },
-            ],
+                children: []
+              }
+            ]
           },
           {
             id: 15,
@@ -216,7 +216,7 @@ const header: HeaderProps = {
             url: '/en/about-us/where-we-are/',
             target: null,
             isActive: false,
-            children: [],
+            children: []
           },
           {
             id: 16,
@@ -224,9 +224,9 @@ const header: HeaderProps = {
             url: '/en/about-us/careers/',
             target: null,
             isActive: false,
-            children: [],
-          },
-        ],
+            children: []
+          }
+        ]
       },
       {
         id: 6,
@@ -234,10 +234,10 @@ const header: HeaderProps = {
         url: '/',
         target: null,
         isActive: false,
-        children: [],
-      },
-    ],
-  },
+        children: []
+      }
+    ]
+  }
 }
 
 export type HeaderType = HeaderProps

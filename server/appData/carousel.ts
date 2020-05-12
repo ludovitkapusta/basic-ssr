@@ -31,7 +31,7 @@ const carousel: CarouselProps = {
         subTitle: 'banner subtitle',
         bannerImageUrl: 'http://satyr.io/1920x365/red',
         bannerImageAlt: '',
-        url: '#',
+        url: '#'
       },
       {
         id: 2,
@@ -39,10 +39,10 @@ const carousel: CarouselProps = {
         subTitle: '',
         bannerImageUrl: 'http://satyr.io/1920x365/green',
         bannerImageAlt: '',
-        url: '#',
-      },
-    ],
-  },
+        url: '#'
+      }
+    ]
+  }
 }
 
 export type CarouselType = CarouselProps

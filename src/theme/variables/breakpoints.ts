@@ -7,7 +7,7 @@ export interface Breakpoints {
 const breakpoints: Breakpoints = {
   lg: 1100,
   md: 640,
-  xs: 320,
+  xs: 320
 }
 
 export default breakpoints

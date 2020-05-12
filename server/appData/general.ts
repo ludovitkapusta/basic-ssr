@@ -9,8 +9,8 @@ const general: GeneralProps = {
     componentSettings: { name: 'general' },
     urls: {},
     requestVerificationToken: '',
-    localizations: {},
-  },
+    localizations: {}
+  }
 }
 
 export type GeneralType = GeneralState
