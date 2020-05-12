@@ -13,18 +13,18 @@ module.exports = merge(common, {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'assets/dist'),
-    publicPath: '/assets/dist',
+    publicPath: '/assets/dist/'
   },
   optimization: {
     usedExports: true,
     mangleWasmImports: true,
     providedExports: true,
-    concatenateModules: true,
+    concatenateModules: true
   },
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: 'false',
-      isPRODUCTION: JSON.stringify(true),
-    }),
-  ],
+      isPRODUCTION: JSON.stringify(true)
+    })
+  ]
 })

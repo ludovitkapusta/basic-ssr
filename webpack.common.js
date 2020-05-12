@@ -14,11 +14,11 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
-      '@routes': path.resolve(__dirname, 'src/routes/'),
       '@theme': path.resolve(__dirname, 'src/theme/'),
       '@widgets': path.resolve(__dirname, 'src/widgets/'),
       '@store': path.resolve(__dirname, 'src/store/'),
-      '@server': path.resolve(__dirname, 'server/')
+      '@server': path.resolve(__dirname, 'server/'),
+      '@helpers': path.resolve(__dirname, 'src/helpers/')
     },
     extensions: ['.ts', '.tsx', '.js']
   },
@@ -52,7 +52,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: '/fonts'
+              outputPath: '/fonts',
+              publicPath: '/assets/dist/fonts/'
             }
           }
         ]
@@ -64,7 +65,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: '/img'
+              outputPath: '/img',
+              publicPath: '/assets/dist/img/'
             }
           }
         ]
@@ -91,7 +93,8 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin({
       __isBrowser__: 'true',
-      isPRODUCTION: JSON.stringify(true)
+      isPRODUCTION: JSON.stringify(true),
+      'process.env': JSON.stringify(process.env)
     })
   ]
 }

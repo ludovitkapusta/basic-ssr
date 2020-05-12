@@ -13,9 +13,11 @@ import {
   generateSSRreducer,
   combinedSSRInitialState
 } from '@store/generateReducers'
-import { Footer, Header } from '@components'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
 import { AppDataType } from './appData'
 import Contact from '@widgets/Contact'
+import Carousel from '@widgets/Carousel'
 
 /* taking care of render component and providing data from React.NET */
 const render = (
@@ -51,5 +53,6 @@ global.Heading = (initialProps: AppDataType) => render(Heading, initialProps)
 global.Component2 = (initialProps: AppDataType) => render(Heading, initialProps)
 global.Component3 = (initialProps: AppDataType) => render(Heading, initialProps)
 global.Contact = (initialProps: AppDataType) => render(Contact, initialProps)
+global.Carousel = (initialProps: AppDataType) => render(Carousel, initialProps)
 
 export default global

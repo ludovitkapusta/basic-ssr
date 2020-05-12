@@ -10,7 +10,9 @@ import { theme, ThemeProvider } from '@theme/styled-components'
 import store from '@store/store'
 import Heading from '@widgets/Heading'
 import Contact from '@widgets/Contact'
-import { Header, Footer, Carousel } from '@components'
+import Carousel from '@widgets/Carousel'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
 import { router } from './router'
 
 declare global {

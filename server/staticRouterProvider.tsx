@@ -1,7 +1,14 @@
 import React from 'react'
 import { Route, StaticRouter, Switch } from 'react-router-dom'
 
-import { header, footer, contact, component2, component3 } from './appData'
+import {
+  header,
+  footer,
+  contact,
+  component2,
+  component3,
+  carousel
+} from './appData'
 import global from './SSR'
 
 interface Props {
@@ -16,6 +23,9 @@ const StaticRouterProvider = ({ location }: Props): JSX.Element => (
           <>
             <div data-config-id="header" data-widget-id="Header">
               {global.Header(header)}
+            </div>
+            <div data-config-id="carousel" data-widget-id="Carousel">
+              {global.Carousel(carousel)}
             </div>
             <div data-config-id="component2" data-widget-id="Heading">
               {global.Component2(component2)}

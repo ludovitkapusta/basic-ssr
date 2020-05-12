@@ -21,5 +21,11 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       __isBrowser__: 'false'
     })
-  ]
+  ],
+  optimization: {
+    usedExports: true,
+    mangleWasmImports: true,
+    providedExports: true,
+    concatenateModules: true
+  }
 })

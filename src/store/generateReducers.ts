@@ -6,13 +6,13 @@ import { AppState } from './rootReducer'
 
 // Preload all possible reducers
 export const reducers: any = {
-  generalReducer,
+  generalReducer
 }
 
 /** Creates default reducer providing only initial state */
 export const defaultReducer = (data: AppState): any => (
   state: AppState = data,
-  action: any,
+  action: any
 ): AppState => {
   switch (action.type) {
     default:
@@ -29,23 +29,9 @@ export const generateClientReducers = (initialData: any): any =>
       ...acc,
       [curr]: reducers[reducerName]
         ? reducers[reducerName]
-        : defaultReducer(initialData[curr]),
+        : defaultReducer(initialData[curr])
     }
   }, {})
-
-// reduce(
-//   (acc, curr) => {
-//     const reducerName = initialData[curr]?.componentSettings?.name
-//     return {
-//       ...acc,
-//       [curr]: reducers[reducerName]
-//         ? reducers[reducerName]
-//         : defaultReducer(initialData[curr]),
-//     }
-//   },
-//   {},
-//   keys(initialData),
-// )
 
 /**  Will merge default data base of JS_CONFIG and initial states of specified reducers */
 export const combinedInitialState = (initialData: any): object =>
@@ -57,33 +43,13 @@ export const combinedInitialState = (initialData: any): object =>
           ...acc,
           [curr]: {
             ...(createStore(
-              combineReducers({ [curr]: reducers[reducerName] }),
+              combineReducers({ [curr]: reducers[reducerName] })
             ).getState()[curr as string] as object),
-            ...initialData[curr],
-          },
+            ...initialData[curr]
+          }
         }
       : acc
   }, {})
-
-// reduce(
-//   (acc, curr) => {
-//     const reducerName = initialData[curr]?.componentSettings?.name
-
-//     return reducers[reducerName]
-//       ? {
-//           ...acc,
-//           [curr]: {
-//             ...(createStore(
-//               combineReducers({ [curr]: reducers[reducerName] }),
-//             ).getState()[curr as string] as object),
-//             ...initialData[curr],
-//           },
-//         }
-//       : acc
-//   },
-//   {},
-//   keys(initialData),
-// )
 
 /**  Will generate reducer on base of initial data from BE */
 export const generateSSRreducer = (initialData: any): any => {
@@ -92,7 +58,7 @@ export const generateSSRreducer = (initialData: any): any => {
   return {
     [reducerName]: reducers[reducerName]
       ? reducers[reducerName]
-      : defaultReducer(initialData),
+      : defaultReducer(initialData)
   }
 }
 
@@ -104,8 +70,8 @@ export const combinedSSRInitialState = (initialData: any): any => {
     ? {
         [reducerName]: {
           ...(createStore(reducers[reducerName]).getState() as object),
-          ...initialData,
-        },
+          ...initialData
+        }
       }
     : {}
 }

@@ -8,6 +8,7 @@ const createStyledComponentsTransformer = require('typescript-plugin-styled-comp
 
 const styledComponentsTransformer = createStyledComponentsTransformer()
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const appData = require('./assets/local/appData')
 
@@ -18,19 +19,19 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
-      '@routes': path.resolve(__dirname, 'src/routes/'),
       '@theme': path.resolve(__dirname, 'src/theme/'),
       '@widgets': path.resolve(__dirname, 'src/widgets/'),
       '@store': path.resolve(__dirname, 'src/store/'),
       '@server': path.resolve(__dirname, 'server/'),
+      '@helpers': path.resolve(__dirname, 'src/helpers/')
     },
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js']
   },
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
     globalObject: 'this',
-    publicPath: '/',
+    publicPath: '/'
   },
   watch: true,
   module: {
@@ -41,15 +42,15 @@ module.exports = {
         exclude: [
           path.resolve(__dirname, 'node_modules/'),
           path.resolve(__dirname, 'tests/'),
-          path.resolve(__dirname, 'assets/'),
+          path.resolve(__dirname, 'assets/')
         ],
         options: {
           transpileOnly: true,
           experimentalWatchApi: true,
           getCustomTransformers: () => ({
-            before: [styledComponentsTransformer],
-          }),
-        },
+            before: [styledComponentsTransformer]
+          })
+        }
       },
       {
         test: [/\.(ttf|woff|woff2|eot)$/],
@@ -58,10 +59,11 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              publicPath: '/',
-            },
-          },
-        ],
+              outputPath: 'assets/dist/fonts/',
+              publicPath: 'assets/dist/fonts/'
+            }
+          }
+        ]
       },
       {
         test: [/\.(png|jpg|jpeg|gif)$/],
@@ -70,14 +72,15 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              publicPath: '/',
-            },
-          },
-        ],
+              outputPath: 'assets/dist/img/',
+              publicPath: 'assets/dist/img/'
+            }
+          }
+        ]
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader',
+        loader: 'svg-inline-loader'
       },
       {
         test: /(500).html$/,
@@ -85,22 +88,22 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-            },
-          },
-        ],
+              name: '[name].[ext]'
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-      },
-    ],
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+      }
+    ]
   },
   devServer: {
     historyApiFallback: true,
     hot: true,
     open: true,
-    port: 8080,
+    port: 8080
   },
   optimization: {
     usedExports: true,
@@ -108,7 +111,7 @@ module.exports = {
     providedExports: true,
     concatenateModules: true,
     runtimeChunk: {
-      name: 'runtime',
+      name: 'runtime'
     },
     splitChunks: {
       cacheGroups: {
@@ -116,25 +119,26 @@ module.exports = {
           reuseExistingChunk: true,
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
+          chunks: 'all'
+        }
+      }
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       __isBrowser__: 'true',
-      isPRODUCTION: JSON.stringify(false),
+      isPRODUCTION: JSON.stringify(false)
     }),
     new HtmlWebpackPlugin({
       templateParameters: {
         initialState: Object.entries(appData).reduce((acc, red) => {
           const [key, value] = red
           return { ...acc, [key]: value.config }
-        }, {}),
+        }, {})
       },
-      template: 'index.html',
+      template: 'index.html'
     }),
-  ],
+    new Dotenv()
+  ]
 }

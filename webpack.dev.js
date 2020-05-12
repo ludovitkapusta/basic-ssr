@@ -13,13 +13,30 @@ module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, 'assets/local'),
     filename: 'bundle.js',
-    chunkFilename: '[name].chunk.js',
+    chunkFilename: '[name].chunk.js'
+  },
+  module: {
+    rules: [
+      {
+        test: [/\.(ttf|woff|woff2|eot)$/],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '/assets/dist/fonts/',
+              publicPath: '/assets/dist/fonts/'
+            }
+          }
+        ]
+      }
+    ]
   },
   node: { fs: 'empty' },
   plugins: [
     new webpack.DefinePlugin({
-      __isBrowser__: 'true',
+      __isBrowser__: 'true'
     }),
-    new Dotenv(),
-  ],
+    new Dotenv()
+  ]
 })

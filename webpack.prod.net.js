@@ -10,13 +10,13 @@ const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
   entry: {
-    main: './server/SSR.tsx',
+    main: './server/SSR.tsx'
   },
   mode: 'production',
   output: {
     filename: '[name].net.js',
     path: path.resolve(__dirname, 'assets/dist.net'),
-    publicPath: '/assets/dist.net',
+    publicPath: '/assets/dist.net'
   },
   optimization: {
     usedExports: true,
@@ -24,7 +24,7 @@ module.exports = merge(common, {
     providedExports: true,
     concatenateModules: true,
     runtimeChunk: {
-      name: 'runtime',
+      name: 'runtime'
     },
     splitChunks: {
       cacheGroups: {
@@ -32,15 +32,15 @@ module.exports = merge(common, {
           reuseExistingChunk: true,
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
+          chunks: 'all'
+        }
+      }
+    }
   },
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: 'false',
-      isPRODUCTION: JSON.stringify(true),
-    }),
-  ],
+      isPRODUCTION: JSON.stringify(true)
+    })
+  ]
 })

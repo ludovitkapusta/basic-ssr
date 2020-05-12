@@ -582,7 +582,7 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
 
-"@types/loadable__component@5.10.0":
+"@types/loadable__component@^5.10.0":
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/@types/loadable__component/-/loadable__component-5.10.0.tgz#178fdc401983f4f93647fac778226da7b8c1e080"
   integrity sha512-AaDP1VxV3p7CdPOtOTl3ALgQ6ES4AxJKO9UGj9vJonq/w2yERxwdzFiWNQFh9fEDXEzjxujBlM2RmSJtHV1/pA==
@@ -5398,6 +5398,11 @@ load-json-file@^4.0.0:
     parse-json "^4.0.0"
     pify "^3.0.0"
     strip-bom "^3.0.0"
+
+loadable@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/loadable/-/loadable-1.0.0.tgz#4c81938704597c04f2eca62c259b646b62d62b8f"
+  integrity sha1-TIGThwRZfATy7KYsJZtka2LWK48=
 
 loader-runner@^2.4.0:
   version "2.4.0"
