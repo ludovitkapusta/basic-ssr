@@ -6,6 +6,11 @@ module.exports = {
     '^@theme/(.*)$': '<rootDir>/src/theme/$1',
     '^@widgets/(.*)$': '<rootDir>/src/widgets/$1',
     '^@store/(.*)$': '<rootDir>/src/store/$1',
-    '^@server/(.*)$': '<rootDir>/server/$1',
+    '^@server/(.*)$': '<rootDir>/server/$1'
   },
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  }
 }
